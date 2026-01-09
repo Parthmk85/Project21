@@ -44,6 +44,17 @@ A fully functional, responsive single-page e-commerce website built with HTML, C
 1. Simply open `index.html` in any modern web browser
 2. No build process or dependencies required!
 
+## Deployment to GitHub Pages
+
+1. Push all files to your GitHub repository (including the `images` folder)
+2. Go to repository Settings → Pages
+3. Under "Source", select "Deploy from a branch"
+4. Select "main" branch and "/ (root)" folder
+5. Click Save
+6. Your site will be live at `https://yourusername.github.io/repository-name/`
+
+**Important**: The `.nojekyll` file ensures GitHub Pages serves all files correctly, including images.
+
 ### Recommended Browsers
 
 - Chrome/Edge (latest)
@@ -57,6 +68,8 @@ Project21/
 ├── index.html      # Main HTML file
 ├── style.css       # All styles and animations
 ├── style.js        # All JavaScript functionality
+├── images/         # Product and team images (13 files)
+├── .nojekyll       # For GitHub Pages deployment
 └── README.md       # This file
 ```
 
