@@ -8,6 +8,7 @@ const products = [
         rating: 4.8,
         reviews: 1234,
         badge: 'Best Seller',
+        image: 'images/headphones_pro.png',
         description: 'Premium wireless headphones with active noise cancellation, 30-hour battery life, and superior sound quality. Perfect for music lovers and professionals.'
     },
     {
@@ -18,6 +19,7 @@ const products = [
         rating: 4.9,
         reviews: 2156,
         badge: 'New',
+        image: 'images/smart_watch.png',
         description: 'Advanced smartwatch with health monitoring, GPS tracking, and 7-day battery life. Stay connected and healthy with cutting-edge technology.'
     },
     {
@@ -28,6 +30,7 @@ const products = [
         rating: 4.7,
         reviews: 856,
         badge: 'Trending',
+        image: 'images/leather_jacket.png',
         description: 'Handcrafted genuine leather jacket with premium stitching and timeless design. A wardrobe essential for any fashion enthusiast.'
     },
     {
@@ -38,6 +41,7 @@ const products = [
         rating: 4.6,
         reviews: 1543,
         badge: 'Sale',
+        image: 'images/running_shoes.png',
         description: 'Lightweight running shoes with advanced cushioning and breathable mesh. Engineered for performance and comfort.'
     },
     {
@@ -48,6 +52,7 @@ const products = [
         rating: 4.5,
         reviews: 432,
         badge: null,
+        image: 'images/table_lamp.png',
         description: 'Elegant table lamp with adjustable brightness and minimalist design. Perfect for your home office or bedroom.'
     },
     {
@@ -58,6 +63,7 @@ const products = [
         rating: 4.7,
         reviews: 987,
         badge: 'Popular',
+        image: 'images/bluetooth_speaker.png',
         description: 'Portable Bluetooth speaker with 360° sound, waterproof design, and 12-hour battery. Take your music anywhere.'
     },
     {
@@ -68,6 +74,7 @@ const products = [
         rating: 4.4,
         reviews: 654,
         badge: null,
+        image: 'images/denim_jeans.png',
         description: 'Classic denim jeans with comfortable fit and durable fabric. A versatile addition to any casual wardrobe.'
     },
     {
@@ -78,6 +85,7 @@ const products = [
         rating: 4.8,
         reviews: 1876,
         badge: 'Best Seller',
+        image: 'images/yoga_mat.png',
         description: 'Non-slip yoga mat with extra cushioning and eco-friendly materials. Perfect for yoga, pilates, and fitness.'
     },
     {
@@ -88,6 +96,7 @@ const products = [
         rating: 4.6,
         reviews: 543,
         badge: 'New',
+        image: 'images/coffee_maker.png',
         description: 'Programmable coffee maker with thermal carafe and brew strength control. Start your day with perfect coffee.'
     },
     {
@@ -98,6 +107,7 @@ const products = [
         rating: 4.9,
         reviews: 765,
         badge: 'Trending',
+        image: 'images/action_camera.png',
         description: 'Waterproof 4K action camera with image stabilization and wide-angle lens. Capture your adventures in stunning detail.'
     },
     {
@@ -108,6 +118,7 @@ const products = [
         rating: 4.5,
         reviews: 321,
         badge: null,
+        image: 'images/silk_scarf.png',
         description: 'Luxurious silk scarf with elegant patterns and vibrant colors. Add sophistication to any outfit.'
     },
     {
@@ -118,6 +129,7 @@ const products = [
         rating: 4.7,
         reviews: 432,
         badge: 'Sale',
+        image: 'images/tennis_racket.png',
         description: 'Professional-grade tennis racket with carbon fiber frame and perfect balance. Elevate your game.'
     }
 ];
@@ -306,6 +318,7 @@ function renderProducts() {
         <div class="product-card" onclick="openProductModal(${product.id})">
             <div class="product-image">
                 ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                <img src="${product.image}" alt="${product.name}" loading="lazy">
             </div>
             <div class="product-info">
                 <div class="product-category">${product.category}</div>
@@ -367,7 +380,9 @@ function openProductModal(productId) {
     
     modalBody.innerHTML = `
         <div class="modal-product">
-            <div class="modal-product-image"></div>
+            <div class="modal-product-image">
+                <img src="${product.image}" alt="${product.name}">
+            </div>
             <div class="modal-product-info">
                 <div class="product-category">${product.category.toUpperCase()}</div>
                 <h2>${product.name}</h2>
@@ -450,7 +465,9 @@ function updateCartUI() {
     } else {
         cartItems.innerHTML = cart.map(item => `
             <div class="cart-item">
-                <div class="cart-item-image"></div>
+                <div class="cart-item-image">
+                    <img src="${item.image}" alt="${item.name}">
+                </div>
                 <div class="cart-item-details">
                     <div class="cart-item-name">${item.name}</div>
                     <div class="cart-item-price">$${item.price.toFixed(2)}</div>
